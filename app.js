@@ -10,7 +10,12 @@ app.whenReady().then(() => {
   });
   win.setAlwaysOnTop(true);
   win.loadFile("index.html"); // load html
+
+  app.on("activate", function () {
+    if (BrowserWindow.getAllWindows().length === 0) createWindow();
+  });
 });
+
 // handle app closing
 app.on("window-all-closed", () => {
   // don't fully close app on mac as this is the expected behavior
