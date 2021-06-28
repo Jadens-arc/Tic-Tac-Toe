@@ -4,9 +4,11 @@ app.whenReady().then(() => {
   // wait until app has completed basic setup
   // declare window
   const win = new BrowserWindow({
-    width: 600,
-    height: 500,
+    width: 400,
+    height: 600,
+    resizable: false,
   });
+  win.setAlwaysOnTop(true);
   win.loadFile("index.html"); // load html
 });
 // handle app closing

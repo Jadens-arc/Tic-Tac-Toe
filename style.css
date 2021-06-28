@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  padding: 10px;
+  font-family: sans-serif;
+}
+
+.board {
+  height: 100%;
+  width: 100%;
+  border-radius: 7px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-gap: 10px;
+  
+}
+
+.board .square {
+  background-color: grey;
+  width: 100%;
+  height: 100%;
+  transition: all ease 0.2s;
+  border-radius: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 90px;
+}
+
+.board .square:hover {
+  transform: scale(1.04);
+}
+
