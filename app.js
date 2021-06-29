@@ -4,8 +4,8 @@ app.whenReady().then(() => {
   // wait until app has completed basic setup
   // declare window
   const win = new BrowserWindow({
-    width: 400,
-    height: 600,
+    width: 500,
+    height: 520,
     resizable: false,
   });
   win.setAlwaysOnTop(true); // debugging
