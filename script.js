@@ -25,16 +25,13 @@ function swapTurn() {
  * @returns {Array}
  */
 function getBoardValues() {
-  let newBoard = []; // new array to hold board values
-  // iterate through each row in board
-  for (let i = 0; i < board.length; i++) {
-    newBoard.push([]); // add new row to newBoard array
+  // iterate through each row
+  return board.map((row) => {
     // iterate through each square in each row
-    for (let j = 0; j < board[i].length; j++) {
-      newBoard[i].push(board[i][j].innerText); // add the value of the square to its row in the newBoard
-    }
-  }
-  return newBoard;
+    return row.map((square) => {
+      return square.innerText; // the value of the element in the list to the squares innerText
+    });
+  });
 }
 
 /**
