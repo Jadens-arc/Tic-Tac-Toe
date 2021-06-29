@@ -8,7 +8,8 @@ app.whenReady().then(() => {
     height: 600,
     resizable: false,
   });
-  win.setAlwaysOnTop(true);
+  win.setAlwaysOnTop(true); // debugging
+  win.menuBarVisible = false;
   win.loadFile("index.html"); // load html
 
   app.on("activate", function () {
