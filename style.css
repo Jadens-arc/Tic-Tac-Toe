@@ -5,11 +5,45 @@
 }
 
 body {
-  width: 100vw;
-  height: 100vh;
-  padding: 10px;
   font-family: sans-serif;
+  height: 100vh;
+  display: flex;
+  flex-flow: column;
   background-image: url(https://images.pexels.com/photos/4597120/pexels-photo-4597120.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+}
+
+.titleBar {
+  height: 40px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
+  -webkit-app-region: drag;
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.titleBar .close-button {
+  color: #ffffff9f;
+  font-weight: 700;
+  background-color: #ffffff3d;
+  height: 100%;
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all ease 0.2s;
+  -webkit-app-region: no-drag;
+  cursor: pointer;
+}
+
+.titleBar .close-button:hover {
+  background-color: #ff00003d;
+}
+
+.board-container {
+  flex-grow : 1;
+  padding: 10px;
 }
 
 .board {

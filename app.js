@@ -7,6 +7,7 @@ app.whenReady().then(() => {
     width: 500,
     height: 520,
     resizable: false,
+    frame: false,
   });
   win.setAlwaysOnTop(true); // debugging
   win.menuBarVisible = false;
