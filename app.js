@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require("electron"); // import electron
+const { app, BrowserWindow, remote, ipcMain } = require("electron"); // import electron
 
 app.whenReady().then(() => {
   // wait until app has completed basic setup
@@ -8,10 +8,18 @@ app.whenReady().then(() => {
     height: 520,
     resizable: false,
     frame: false,
+    webPreferences: {
+      nodeIntegration: true,
+      contextIsolation: false,
+    },
   });
   win.setAlwaysOnTop(true); // debugging
   win.menuBarVisible = false;
   win.loadFile("index.html"); // load html
+
+  ipcMain.on("closeApp", () => {
+    win.close();
+  });
 
   app.on("activate", function () {
     if (BrowserWindow.getAllWindows().length === 0) createWindow();

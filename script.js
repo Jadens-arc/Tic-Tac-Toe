@@ -1,4 +1,11 @@
+const { ipcRenderer } = require("electron");
+
+document.getElementById("closeButton").addEventListener("click", () => {
+  ipcRenderer.send("closeApp");
+});
+
 const boardEle = document.getElementById("board");
+
 let board = [];
 let currentTurn = "X";
 
