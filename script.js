@@ -74,13 +74,38 @@ function vWins() {
   return false;
 }
 
+function dWins() {
+  let sBoard = getBoardValues();
+  let comp;
+  let perfect;
+  // iterate through negative diagonal direction to see if perfect
+  comp = sBoard[0][0];
+  perfect = true;
+  for (let i = 0; i < sBoard.length; i++) {
+    if (sBoard[i][i] != comp || sBoard[i][i] == "") perfect = false;
+  }
+  if (perfect) return true;
+
+  // iterate through positive diagonal direction to see if perfect
+  comp = sBoard[0][sBoard.length - 1];
+  perfect = true;
+  for (let i = 0; i < sBoard.length; i++) {
+    let cur = sBoard[i][sBoard.length - 1 - i];
+    if (cur != comp || cur == "") perfect = false;
+  }
+  if (perfect) return true;
+
+  // if no perfect diagonals have been found then return false
+  return false;
+}
+
 /**
  * Checks if any wins occurred on the board
  * @returns {Boolean}
  */
 function didWin() {
   // return hWins() || vWins() || dWins();
-  return hWins() || vWins();
+  return hWins() || vWins() || dWins();
 }
 
 board.forEach((row) => {
