@@ -9,6 +9,7 @@ body {
   height: 100vh;
   padding: 10px;
   font-family: sans-serif;
+  background-image: url(https://images.pexels.com/photos/4597120/pexels-photo-4597120.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
 }
 
 .board {
@@ -23,7 +24,8 @@ body {
 }
 
 .board .square {
-  background-color: grey;
+  backdrop-filter: blur(10px) brightness(60%);
+  color: aliceblue;
   width: 100%;
   height: 100%;
   transition: all ease 0.2s;
@@ -32,6 +34,7 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 90px;
+  border: 2px solid black;
 }
 
 .board .square:hover {
