@@ -56,12 +56,31 @@ function hWins() {
 }
 
 /**
+ * Return if there were any vertical wins on the board
+ *
+ * @returns {Boolean}
+ */
+function vWins() {
+  let sBoard = getBoardValues();
+  // iterate through board columns and look for perfect columns
+  for (let i = 0; i < sBoard[0].length; i++) {
+    let comp = sBoard[0][i]; // get first square in row to compare others to
+    let perfect = true; // defaults to true if any non matching squares are found then set to false
+    for (let j = 0; j < sBoard.length; j++) {
+      if (comp != sBoard[j][i] || sBoard[j][i] == "") perfect = false;
+    }
+    if (perfect) return true;
+  }
+  return false;
+}
+
+/**
  * Checks if any wins occurred on the board
  * @returns {Boolean}
  */
 function didWin() {
   // return hWins() || vWins() || dWins();
-  return hWins();
+  return hWins() || vWins();
 }
 
 board.forEach((row) => {
