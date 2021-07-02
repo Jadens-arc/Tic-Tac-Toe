@@ -1,5 +1,6 @@
-const { ipcRenderer } = require("electron");
+const { ipcRenderer } = require("electron"); // send data from front end to backend
 
+// if someone clicks the close button then send request to backend to close window
 document.getElementById("closeButton").addEventListener("click", () => {
   ipcRenderer.send("closeApp");
 });

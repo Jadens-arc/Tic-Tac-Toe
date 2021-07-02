@@ -17,6 +17,7 @@ app.whenReady().then(() => {
   win.menuBarVisible = false;
   win.loadFile("index.html"); // load html
 
+  // if request from frontend is made to close app the close the window
   ipcMain.on("closeApp", () => {
     win.close();
   });
